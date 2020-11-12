@@ -37,7 +37,7 @@ class Setu {
     private fun getSetuInfo() {
         try {
             val request = Request.Builder()
-                .url("https://api.lolicon.app/setu/?apikey=${getApiKey()}")
+                .url("https://api.lolicon.app/setu/?apikey=${getApiKey()}&r18=${getR18()}")
                 .get()
                 .build()
             val response = client.newCall(request).execute()

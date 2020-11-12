@@ -5,6 +5,7 @@ import java.io.File
 import java.io.FileOutputStream
 import java.io.OutputStreamWriter
 import java.lang.Exception
+import kotlin.concurrent.fixedRateTimer
 
 object ConfigManager {
     private var cfg = File("config.json")
@@ -40,6 +41,9 @@ object ConfigManager {
                     println("输入有误 请输入yes或者no")
                 }
             }
+        }
+        if (getConfig("r18").toString().isEmpty() || getConfig("r18") == null) {
+            setConfig("r18", 0)
         }
     }
 

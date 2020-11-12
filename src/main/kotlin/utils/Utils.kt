@@ -11,3 +11,7 @@ fun getToken(): String {
 fun getApiKey(): String {
     return ConfigManager.getConfig("apikey").let { it?.toString() ?: "" }
 }
+
+fun getR18(): String {
+    return ConfigManager.getConfig("r18").let { it?.toString() ?: "0" }
+}
