@@ -16,15 +16,15 @@ class SetR18Msg : MessageCreateListener {
                     when (event.messageContent.substring(8)) {
                         "0" -> {
                             ConfigManager.setConfig("r18", 0)
-                            MessageBuilder().append("设置成功!当前模式:仅非R-18")
+                            MessageBuilder().append("设置成功!当前模式:仅非R-18").send(event.channel)
                         }
                         "1" -> {
                             ConfigManager.setConfig("r18", 1)
-                            MessageBuilder().append("设置成功!当前模式:仅R-18")
+                            MessageBuilder().append("设置成功!当前模式:仅R-18").send(event.channel)
                         }
                         "2" -> {
                             ConfigManager.setConfig("r18", 2)
-                            MessageBuilder().append("设置成功!当前模式:混合")
+                            MessageBuilder().append("设置成功!当前模式:混合").send(event.channel)
                         }
                         else -> MessageBuilder().append("输入的参数不合法!").send(event.channel)
                     }
